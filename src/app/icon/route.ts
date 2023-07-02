@@ -25,6 +25,7 @@ import * as PiIcons from 'react-icons/pi';
 import * as RiIcons from 'react-icons/ri';
 import * as RxIcons from 'react-icons/rx';
 import * as SiIcons from 'react-icons/si';
+import * as SlIcons from 'react-icons/sl';
 import * as TbIcons from 'react-icons/tb';
 import * as TfiIcons from 'react-icons/tfi';
 import * as TiIcons from 'react-icons/ti';
@@ -57,6 +58,7 @@ const IconsManifest = {
   ri: RiIcons,
   rx: RxIcons,
   si: SiIcons,
+  sl: SlIcons,
   tb: TbIcons,
   tfi: TfiIcons,
   ti: TiIcons,
