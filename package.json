@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel"
+    "vercel-build": ""
   },
   "dependencies": {
     "@napi-rs/canvas": "^0.1.41",
