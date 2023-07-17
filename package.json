@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": ""
+    "lint": "next lint"
   },
   "dependencies": {
     "@napi-rs/canvas": "^0.1.41",
