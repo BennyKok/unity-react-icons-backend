@@ -10,11 +10,11 @@
     "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.41",
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
-    "canvas": "^2.11.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",

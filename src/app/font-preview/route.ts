@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import {
-  Canvas,
-  createCanvas,
-  registerFont,
-  CanvasRenderingContext2D,
-} from 'canvas';
+import { Canvas, createCanvas, GlobalFonts, SKRSContext2D } from '@napi-rs/canvas';
 import { promises as fs } from 'fs';
 import tmp from 'tmp-promise';
 
@@ -12,7 +7,7 @@ async function renderFont(
   fontUrl: string | undefined,
   family: string,
   canvas: Canvas,
-  context: CanvasRenderingContext2D,
+  context: SKRSContext2D,
 ) {
   const textToWrite = family;
 
@@ -44,7 +39,7 @@ async function renderFont(
   // write the font data to the temporary file
   await fs.writeFile(tmpfile.path, Buffer.from(font), 'binary');
 
-  registerFont(tmpfile.path, { family: family });
+  GlobalFonts.registerFromPath(tmpfile.path, family);
 
   // clear the canvas
   context.clearRect(0, 0, canvas.width, canvas.height);
