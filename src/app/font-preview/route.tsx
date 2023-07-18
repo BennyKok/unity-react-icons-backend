@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import satori from 'satori';
 import sharp from 'sharp';
 
-async function renderFont(
-  fontUrl: string | undefined,
-  family: string,
-) {
+async function renderFont(fontUrl: string | undefined, family: string) {
   const textToWrite = family;
 
   if (!fontUrl) {
@@ -62,7 +59,7 @@ async function renderFont(
     },
   );
 
-  const pngBuffer = await sharp(Buffer.from(svgString)).png().toBuffer();
+  const pngBuffer = await sharp(svgString).png().toBuffer();
 
   // Convert PNG buffer to base64
   const base64Png = pngBuffer.toString('base64');
@@ -74,7 +71,6 @@ export async function GET(request: NextRequest) {
   const family = searchParams.get('family')!;
 
   const families = family.split(',');
-
 
   const promises = families.map((family) => {
     return renderFont(undefined, family);
