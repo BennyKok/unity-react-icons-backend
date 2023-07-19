@@ -59,7 +59,7 @@ async function renderFont(fontUrl: string | undefined, family: string) {
     },
   );
 
-  const pngBuffer = await sharp(svgString).png().toBuffer();
+  const pngBuffer = await sharp(Buffer.from(svgString)).png().toBuffer();
 
   // Convert PNG buffer to base64
   const base64Png = pngBuffer.toString('base64');
